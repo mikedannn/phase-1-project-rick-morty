@@ -1,6 +1,6 @@
 // hello this is the project
 
-const URL = 'https://rickandmortyapi.com/api/character/1'
+const URL = 'https://rickandmortyapi.com/api/character'
 const card = document.getElementById('card');
 const gallery = document.getElementById('character_gallery');
 const selectedImage = document.getElementById('selectedImage');
@@ -40,12 +40,14 @@ const renderCharacter = (character) => {
     // gallery.appendChild(characterCard);
 }
 
-btn.addEventListener('click', () => {
-    fetch(URL)
-        .then(res => res.json())
-        .then(character => renderCharacter(character))
-        // .then(character => renderCharacter())
-        // document.getElementById('character_gallery').innerHTML = characterHTML
+document.addEventListener('DOMContentLoaded', () => {
+    for (let id = 1; id<6; id++) {
+        fetch(`${URL}/${id}`)
+            .then(res => res.json())
+            .then(character => renderCharacter(character))
+            // .then(character => renderCharacter())
+            // document.getElementById('character_gallery').innerHTML = characterHTML
+    }        
 })
 
 
