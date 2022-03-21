@@ -1,7 +1,7 @@
 // hello this is the project
 
 const URL = 'https://rickandmortyapi.com/api/character'
-const card = document.getElementById('card');
+const card = document.getElementById('cards');
 const gallery = document.getElementById('character_gallery');
 const selectedImage = document.getElementById('selectedImage');
 const btn = document.getElementById('characterBtn');
@@ -20,28 +20,16 @@ const renderCharacter = (character) => {
             <p>SPECIES: ${character.species}</p> 
             <p>GENDER: ${character.gender}</p> 
             <p>STATUS: ${character.status}</p> 
+            <button id="button${character.id}">More about me!</button>
         </div>
     </div>`
 
     card.appendChild(characterCard);
 
-
-
-
-    // characterCard.innerHTML = 
-    // `
-    //     <img id="${character.id}" src="${character.image}" />
-    //     <li>NAME: ${character.name}</li>
-    //     <li>SPECIES: ${character.species}</li>
-    //     <li>GENDER: ${character.gender}</li>
-    //     <li>STATUS: ${character.status}</li>
-    // `;
-
-    // gallery.appendChild(characterCard);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    for (let id = 1; id<6; id++) {
+    for (let id = 1; id<31; id++) {
         fetch(`${URL}/${id}`)
             .then(res => res.json())
             .then(character => renderCharacter(character))
