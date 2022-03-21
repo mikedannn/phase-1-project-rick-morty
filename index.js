@@ -15,7 +15,7 @@ const renderCharacter = (character) => {
 
     `<div class="card">
         <img src="${character.image}" alt="Avatar" style="width:100%">
-        <div class="container">
+        <div class="character_info">
             <h4><b>${character.name}</b></h4> 
             <p>SPECIES: ${character.species}</p> 
             <p>GENDER: ${character.gender}</p> 
