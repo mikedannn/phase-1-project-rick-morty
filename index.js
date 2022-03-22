@@ -20,11 +20,18 @@ const renderCharacter = (character) => {
             <p>SPECIES: ${character.species}</p> 
             <p>GENDER: ${character.gender}</p> 
             <p>STATUS: ${character.status}</p> 
-            <button onclick="openCard()" id="${character.id}" class="button">More about me!</button>
+            <button onclick="openCard(${character.id})" id="${character.id}" class="button">More about me!</button>
         </div>
     </div>`
 
     card.appendChild(characterCard);
+
+}
+
+const showMoreInfo = (character) => {
+    console.log(character)
+
+
 
 }
 
@@ -40,8 +47,12 @@ document.addEventListener('DOMContentLoaded', () => {
     
 })
 
-const openCard = () => {
-    console.log(`hello`)
+const openCard = (id) => {
+    fetch(`${URL}/${id}`)
+            .then(res => res.json())
+            .then(character => showMoreInfo(character))
+        
+    // console.log(`hello${id}`)
 }
 
 
