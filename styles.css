@@ -51,7 +51,7 @@ body {
 .container {
     display: grid;
     grid-template-columns: repeat(3, [col-start] 5fr);
-    gap: 10px;
+    gap: 100px;
 }
 
 .card {
@@ -65,6 +65,20 @@ body {
     text-align: center;
 }
 
+img {
+    max-width: 100%;  
+    height: auto;  
+}
 
+h4 {
+    font-size: 20px;
+}
 
+footer {
+    text-align: center;
+    font-size: 60px;
+    font-family: 'Bangers', cursive;
+    font-kerning: normal;
+    background-color: aqua;
+  }
 
