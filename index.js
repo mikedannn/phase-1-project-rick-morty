@@ -4,6 +4,8 @@ const URL = 'https://rickandmortyapi.com/api/character'
 const card = document.getElementById('cards');
 const gallery = document.getElementById('character_gallery');
 const selectedImage = document.getElementById('selectedImage');
+const modal = document.getElementById("myModal");
+const span = document.getElementsByClassName("close")[0];
 
 
 
@@ -29,10 +31,18 @@ const renderCharacter = (character) => {
 }
 
 const showMoreInfo = (character) => {
-    console.log(character)
+    modal.style.display = "block";
+    // add in enlarged card function meat
+}
 
+span.onclick = function() {
+    modal.style.display = "none";
+}
 
-
+window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
