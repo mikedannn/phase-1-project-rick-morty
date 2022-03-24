@@ -35,7 +35,6 @@ const showMoreInfo = (character) => {
     `<div class="modal-content">
         <div class="modal-header">
             <span class="close">&times;</span>
-            <img src="${character.image}" alt="Avatar" style="width:100%">
             <h3>${character.name}</h3>
         </div>
         <div class="modal-body">
@@ -56,6 +55,7 @@ const showMoreInfo = (character) => {
     // add in enlarged card function meat
 
 }
+
 
 
 window.onclick = function(event) {
