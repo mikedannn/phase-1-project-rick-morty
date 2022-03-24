@@ -19,9 +19,6 @@ const renderCharacter = (character) => {
         <img src="${character.image}" alt="Avatar" style="width:100%">
         <div class="character_info">
             <h4><b>${character.name}</b></h4> 
-            <p>SPECIES: ${character.species}</p> 
-            <p>GENDER: ${character.gender}</p> 
-            <p>STATUS: ${character.status}</p> 
             <button onclick="openCard(${character.id})" id="${character.id}" class="button">More about me!</button>
         </div>
     </div>`
@@ -31,13 +28,35 @@ const renderCharacter = (character) => {
 }
 
 const showMoreInfo = (character) => {
+    let characterModal = document.createElement('div');
+
+    characterModal.innerHTML = 
+
+    `<div class="modal-content">
+        <div class="modal-header">
+            <span class="close">&times;</span>
+            <img src="${character.image}" alt="Avatar" style="width:100%">
+            <h3>${character.name}</h3>
+        </div>
+        <div class="modal-body">
+            <p>SPECIES: ${character.species}</p> 
+            <p>GENDER: ${character.gender}</p> 
+            <p>STATUS: ${character.status}</p> 
+            <p>Origin: ${character.origin.name}</p> 
+        </div>
+        <div class="modal-footer">
+            <h3>Goodbye!</h3>
+        </div>
+    </div>
+    `
+
+    modal.appendChild(characterModal);
+
     modal.style.display = "block";
     // add in enlarged card function meat
+
 }
 
-span.onclick = function() {
-    modal.style.display = "none";
-}
 
 window.onclick = function(event) {
     if (event.target == modal) {
