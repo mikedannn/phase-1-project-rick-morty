@@ -5,7 +5,10 @@ const card = document.getElementById('cards');
 const gallery = document.getElementById('character_gallery');
 const selectedImage = document.getElementById('selectedImage');
 const modal = document.getElementById("myModal");
-const span = document.getElementsByClassName("close")[0];
+const maleBtn = document.getElementById('maleFilter');
+const femaleBtn = document.getElementById('femaleFilter');
+const humanBtn = document.getElementById('humanFilter');
+const alienBtn = document.getElementById('alienFilter');
 
 
 const renderCharacter = (character) => {
@@ -23,7 +26,6 @@ const renderCharacter = (character) => {
     </div>`
 
     card.appendChild(characterCard);
-
 }
 
 const showMoreInfo = (character) => {
@@ -46,16 +48,13 @@ const showMoreInfo = (character) => {
         </div>
     </div>
     `
-
     modal.appendChild(characterModal);
-
     modal.style.display = "block";
-    // add in enlarged card function meat
 }
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    for (let id = 1; id<50; id++) {
+    for (let id = 1; id<61; id++) {
         fetch(`${URL}/${id}`)
             .then(res => res.json())
             .then(character => renderCharacter(character))
@@ -73,6 +72,21 @@ window.addEventListener('click', function(e) {
     modal.style.display = 'none';
 })
 
+maleBtn.addEventListener('click', () => {
+    console.log('return male');
+})
+
+femaleBtn.addEventListener('click', () => {
+    console.log('return female');
+})
+
+humanBtn.addEventListener('click', () => {
+    console.log('return human');
+})
+
+alienBtn.addEventListener('click', () => {
+    console.log('return alien');
+})
 
 
 
