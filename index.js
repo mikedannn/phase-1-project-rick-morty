@@ -8,7 +8,6 @@ const modal = document.getElementById("myModal");
 const span = document.getElementsByClassName("close")[0];
 
 
-
 const renderCharacter = (character) => {
     let characterCard = document.createElement('div');
     
@@ -52,10 +51,7 @@ const showMoreInfo = (character) => {
 
     modal.style.display = "block";
     // add in enlarged card function meat
-
 }
-
-
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -63,24 +59,21 @@ document.addEventListener('DOMContentLoaded', () => {
         fetch(`${URL}/${id}`)
             .then(res => res.json())
             .then(character => renderCharacter(character))
-            // .then(character => renderCharacter())
-            // document.getElementById('character_gallery').innerHTML = characterHTML
     }
-    
 })
 
 const openCard = (id) => {
     fetch(`${URL}/${id}`)
             .then(res => res.json())
             .then(character => showMoreInfo(character))
-        
-    // console.log(`hello${id}`)
 }
 
 window.addEventListener('click', function(e) {
-    e.preventDefault();
+    modal.innerHTML = "";
     modal.style.display = 'none';
 })
+
+
 
 
 
