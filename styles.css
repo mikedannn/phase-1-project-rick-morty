@@ -52,6 +52,7 @@ body {
     display: grid;
     grid-template-columns: repeat(3, [col-start] 5fr);
     gap: 100px;
+    padding-top: 50px;
 }
 
 .card {
@@ -92,8 +93,8 @@ footer {
     width: 60%;
     height: 60%; 
     overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
-    border-radius: 50px 50px 50px 50px;
+    /* background-color: rgba(0,0,0,0.8); Black w/ opacity */
+    /* border-radius: 50px 50px 50px 50px; */
   }
   
   /* Modal Content/Box */
@@ -130,7 +131,11 @@ footer {
 }
 
 /* Modal Body */
-.modal-body {padding: 2px 16px;}
+.modal-body {
+    padding: 2px 16px;
+    text-align: left;
+    color: white;
+}
 
 /* Modal Footer */
 .modal-footer {

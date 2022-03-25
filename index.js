@@ -34,13 +34,12 @@ const showMoreInfo = (character) => {
 
     `<div class="modal-content">
         <div class="modal-header">
-            <span class="close">&times;</span>
             <h3>${character.name}</h3>
         </div>
         <div class="modal-body">
-            <p>SPECIES: ${character.species}</p> 
-            <p>GENDER: ${character.gender}</p> 
-            <p>STATUS: ${character.status}</p> 
+            <p>Species: ${character.species}</p> 
+            <p>Gender: ${character.gender}</p> 
+            <p>Status: ${character.status}</p> 
             <p>Origin: ${character.origin.name}</p> 
         </div>
         <div class="modal-footer">
@@ -58,15 +57,9 @@ const showMoreInfo = (character) => {
 
 
 
-window.onclick = function(event) {
-    if (event.target == modal) {
-      modal.style.display = "none";
-    }
-}
-
 document.addEventListener('DOMContentLoaded', () => {
 
-    for (let id = 1; id<31; id++) {
+    for (let id = 1; id<50; id++) {
         fetch(`${URL}/${id}`)
             .then(res => res.json())
             .then(character => renderCharacter(character))
@@ -84,7 +77,10 @@ const openCard = (id) => {
     // console.log(`hello${id}`)
 }
 
-
+window.addEventListener('click', function(e) {
+    e.preventDefault();
+    modal.style.display = 'none';
+})
 
 
 
