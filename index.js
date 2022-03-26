@@ -73,8 +73,30 @@ window.addEventListener('click', function(e) {
 })
 
 maleBtn.addEventListener('click', () => {
-    console.log('return male');
+    card.innerHTML = "";
+
+    for (let id = 1; id<61; id++) {
+        fetch(`${URL}/${id}`)
+            .then(res => res.json())
+            .then(function(character) {
+                if (character['gender'].toUpperCase() === 'MALE') {
+                    renderCharacter(character);
+                }
+            })
+    }
 })
+
+// function filter
+
+
+
+
+
+
+
+
+
+
 
 femaleBtn.addEventListener('click', () => {
     console.log('return female');
