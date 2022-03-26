@@ -72,42 +72,52 @@ window.addEventListener('click', function(e) {
     modal.style.display = 'none';
 })
 
+// button helper function
+
+function filterCharacterCards(character, filterCategory, filterString) {
+    if (character[filterCategory].toUpperCase() === filterString.toUpperCase()) {
+        renderCharacter(character);
+    }
+}
+
 maleBtn.addEventListener('click', () => {
     card.innerHTML = "";
 
     for (let id = 1; id<61; id++) {
         fetch(`${URL}/${id}`)
             .then(res => res.json())
-            .then(function(character) {
-                if (character['gender'].toUpperCase() === 'MALE') {
-                    renderCharacter(character);
-                }
-            })
+            .then(character => filterCharacterCards(character, 'gender', 'male'))
     }
 })
 
-// function filter
-
-
-
-
-
-
-
-
-
-
-
 femaleBtn.addEventListener('click', () => {
-    console.log('return female');
+    card.innerHTML = "";
+
+    for (let id = 1; id<61; id++) {
+        fetch(`${URL}/${id}`)
+            .then(res => res.json())
+            .then(character => filterCharacterCards(character, 'gender', 'female'))
+    }
 })
 
 humanBtn.addEventListener('click', () => {
-    console.log('return human');
+    card.innerHTML = "";
+
+    for (let id = 1; id<61; id++) {
+        fetch(`${URL}/${id}`)
+            .then(res => res.json())
+            .then(character => filterCharacterCards(character, 'species', 'human'))
+    }
 })
 
 alienBtn.addEventListener('click', () => {
-    console.log('return alien');
+    card.innerHTML = "";
+
+    for (let id = 1; id<61; id++) {
+        fetch(`${URL}/${id}`)
+            .then(res => res.json())
+            .then(character => filterCharacterCards(character, 'species', 'alien'))
+    }
 })
 
 
