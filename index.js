@@ -9,6 +9,7 @@ const maleBtn = document.getElementById('maleFilter');
 const femaleBtn = document.getElementById('femaleFilter');
 const humanBtn = document.getElementById('humanFilter');
 const alienBtn = document.getElementById('alienFilter');
+const showAllBtn = document.getElementById('showAllFilter');
 
 
 const renderCharacter = (character) => {
@@ -117,6 +118,16 @@ alienBtn.addEventListener('click', () => {
         fetch(`${URL}/${id}`)
             .then(res => res.json())
             .then(character => filterCharacterCards(character, 'species', 'alien'))
+    }
+})
+
+showAllBtn.addEventListener('click', () => {
+    card.innerHTML = "";
+
+    for (let id = 1; id<61; id++) {
+        fetch(`${URL}/${id}`)
+            .then(res => res.json())
+            .then(character => renderCharacter(character))
     }
 })
 
