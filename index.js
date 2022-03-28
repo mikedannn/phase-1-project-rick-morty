@@ -19,7 +19,7 @@ const renderCharacter = (character) => {
     characterCard.innerHTML =
 
     `<div class="card">
-        <img src="${character.image}" alt="Avatar" style="width:100%">
+        <img src="${character.image}" width = "50px" height = "50px" alt="Avatar" style="width:100%">
         <div class="character_info">
             <h4><b>${character.name}</b></h4> 
             <button onclick="openCard(${character.id})" id="${character.id}" class="button">More about me!</button>
@@ -130,9 +130,3 @@ showAllBtn.addEventListener('click', () => {
             .then(character => renderCharacter(character))
     }
 })
-
-
-
-
-
-

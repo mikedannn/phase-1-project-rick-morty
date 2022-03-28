@@ -60,8 +60,8 @@ body {
     border: 4px;
     background-color: rgba(0,0,0,.5);
     border-radius: 50px 50px 50px 50px;
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-left: 50px;
+    padding-right: 50px;
 }
 
 .character_info {
@@ -165,7 +165,5 @@ footer {
     padding-top: 20px;
     padding-bottom: 20px;
 }
-
-
 
 
