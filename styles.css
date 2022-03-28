@@ -8,7 +8,7 @@ html {
 
 h1 {
     text-align: center;
-    font-size: 75px;
+    font-size: 85px;
     font-family: 'Bangers', cursive;
     font-kerning: normal;
     background-color: aqua;
@@ -20,6 +20,7 @@ h2 {
     font-size: 35px;
     font-family: 'Bangers', cursive;
     color: white;
+    padding-bottom: 20px;
 }
 
 button {
