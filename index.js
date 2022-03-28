@@ -19,7 +19,7 @@ const renderCharacter = (character) => {
     characterCard.innerHTML =
 
     `<div class="card">
-        <img src="${character.image}" width = "50px" height = "50px" alt="Avatar" style="width:100%">
+        <img src="${character.image}" alt="Avatar" style="width:100%">
         <div class="character_info">
             <h4><b>${character.name}</b></h4> 
             <button onclick="openCard(${character.id})" id="${character.id}" class="button">More about me!</button>
@@ -55,7 +55,7 @@ const showMoreInfo = (character) => {
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    for (let id = 1; id<61; id++) {
+    for (let id = 1; id<81; id++) {
         fetch(`${URL}/${id}`)
             .then(res => res.json())
             .then(character => renderCharacter(character))
@@ -84,7 +84,7 @@ function filterCharacterCards(character, filterCategory, filterString) {
 maleBtn.addEventListener('click', () => {
     card.innerHTML = "";
 
-    for (let id = 1; id<61; id++) {
+    for (let id = 1; id<81; id++) {
         fetch(`${URL}/${id}`)
             .then(res => res.json())
             .then(character => filterCharacterCards(character, 'gender', 'male'))
@@ -104,7 +104,7 @@ femaleBtn.addEventListener('click', () => {
 humanBtn.addEventListener('click', () => {
     card.innerHTML = "";
 
-    for (let id = 1; id<61; id++) {
+    for (let id = 1; id<81; id++) {
         fetch(`${URL}/${id}`)
             .then(res => res.json())
             .then(character => filterCharacterCards(character, 'species', 'human'))
@@ -114,7 +114,7 @@ humanBtn.addEventListener('click', () => {
 alienBtn.addEventListener('click', () => {
     card.innerHTML = "";
 
-    for (let id = 1; id<61; id++) {
+    for (let id = 1; id<81; id++) {
         fetch(`${URL}/${id}`)
             .then(res => res.json())
             .then(character => filterCharacterCards(character, 'species', 'alien'))
@@ -124,7 +124,7 @@ alienBtn.addEventListener('click', () => {
 showAllBtn.addEventListener('click', () => {
     card.innerHTML = "";
 
-    for (let id = 1; id<61; id++) {
+    for (let id = 1; id<81; id++) {
         fetch(`${URL}/${id}`)
             .then(res => res.json())
             .then(character => renderCharacter(character))
