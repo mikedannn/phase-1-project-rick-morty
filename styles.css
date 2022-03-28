@@ -50,7 +50,7 @@ body {
 
 .container {
     display: grid;
-    grid-template-columns: repeat(3, [col-start] 5fr);
+    grid-template-columns: repeat(4, [col-start] 5fr);
     gap: 100px;
     padding-top: 50px;
 }
