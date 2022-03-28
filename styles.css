@@ -74,7 +74,7 @@ img {
 }
 
 h4 {
-    font-size: 25px;
+    font-size: 20px;
 }
 
 footer {
@@ -105,13 +105,6 @@ footer {
     border: 1px solid #888;
     width: 80%; 
   }
-  
-  /* .close:hover,
-  .close:focus {
-    color: rgba(0,0,0,0.8); ;
-    text-decoration: none;
-    cursor: pointer;
-  } */
 
 .modal-header {
     padding: 2px 16px;
@@ -121,14 +114,12 @@ footer {
     font-family: 'Bangers', cursive;
 }
 
-/* Modal Body */
 .modal-body {
     padding: 2px 16px;
     text-align: left;
     color: white;
 }
 
-/* Modal Footer */
 .modal-footer {
     padding: 2px 16px;
     background-color: rgba(0,0,0,0.8);
@@ -137,7 +128,6 @@ footer {
     font-family: 'Bangers', cursive;
 }
 
-/* Modal Content */
 .modal-content {
   position: relative;
   background-color: rgba(0,0,0,0.8);
@@ -163,8 +153,8 @@ footer {
     padding-right: 75px;
     padding-top: 20px;
     padding-bottom: 20px;
-    margin-left: 25px;
-    margin-right: 25px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 

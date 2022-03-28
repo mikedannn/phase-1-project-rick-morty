@@ -1,9 +1,5 @@
-// hello this is the project
-
 const URL = 'https://rickandmortyapi.com/api/character'
 const card = document.getElementById('cards');
-const gallery = document.getElementById('character_gallery');
-const selectedImage = document.getElementById('selectedImage');
 const modal = document.getElementById("myModal");
 const maleBtn = document.getElementById('maleFilter');
 const femaleBtn = document.getElementById('femaleFilter');
@@ -11,13 +7,10 @@ const humanBtn = document.getElementById('humanFilter');
 const alienBtn = document.getElementById('alienFilter');
 const showAllBtn = document.getElementById('showAllFilter');
 
-
 const renderCharacter = (character) => {
     let characterCard = document.createElement('div');
     
-
     characterCard.innerHTML =
-
     `<div class="card">
         <img src="${character.image}" alt="Avatar" style="width:100%">
         <div class="character_info">
@@ -33,7 +26,6 @@ const showMoreInfo = (character) => {
     let characterModal = document.createElement('div');
 
     characterModal.innerHTML = 
-
     `<div class="modal-content">
         <div class="modal-header">
             <h3>${character.name}</h3>
@@ -54,7 +46,6 @@ const showMoreInfo = (character) => {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-
     for (let id = 1; id<81; id++) {
         fetch(`${URL}/${id}`)
             .then(res => res.json())
